@@ -1,7 +1,7 @@
 # Spelling Difficulty Prediction
 
 This project contains experiments for spelling error prediction. The pre-processing steps for error extraction from learner corpora could also be used for other error types. 
-Please use the following citation:
+The experiments are described in detail in the paper "Predicting the Spelling Difficulty of Words for Language Learners". Please use the following citation:
 
 ```
 @inproceedings{	TUD-CS-2016-0077,
