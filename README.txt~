@@ -1,0 +1,17 @@
+
+
+  
+This folder contains the experiments for spelling error prediction described in: 
+Lisa Beinborn, Torsten Zesch, Iryna Gurevych. Predicting the Spelling Difficulty of Words for Language Learners. In:Proceedings of the 11th Workshop on Innovative Use of NLP for Building Educational Applications held in conjunction with NAACL 2016, p. to appear, 2016. 
+
+
+To re-run the experiments, check the file src/main/java/prediction/RunEverything.java
+
+I recommend to skip the pre-processing part and directly use the extracted errors available at: 
+https://www.ukp.tu-darmstadt.de/data/spelling-correction/spelling-difficulty prediction
+
+TODO!!!Required resources: 
+have web1t with jweb1t indexes in your dkproHome directory 
+wordlists american-english, ngerman and italian in "/usr/share/dict/"
+
+
