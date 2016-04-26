@@ -1,0 +1,88 @@
+package preprocessing;
+
+public class SpellingWord
+    implements Comparable<SpellingWord>
+{
+    private String word;
+    private long correctFrequency;
+    private long errorFrequency;
+    private double errorProbability;
+
+    public SpellingWord(String line)
+    {
+        String[] elems = line.split("\t");
+
+        word = elems[0];
+        errorFrequency = Long.parseLong(elems[1]);
+        correctFrequency = Long.parseLong(elems[2]);
+        errorProbability = Double.parseDouble(elems[3]);
+    }
+
+    @Override
+    public int compareTo(SpellingWord otherWord)
+    {
+        if (this.errorProbability < otherWord.getErrorProbability()) {
+            return 1;
+        }
+        if (this.errorProbability == otherWord.getErrorProbability()) {
+
+            if (this.errorFrequency < otherWord.getErrorFrequency()) {
+                return 1;
+            }
+            if (this.errorFrequency == otherWord.getErrorFrequency()) {
+                if (this.correctFrequency > otherWord.getCorrectFrequency()) {
+                    return 1;
+                }
+            }
+        }
+        return -1;
+
+    }
+
+    public String getWord()
+    {
+        return word;
+    }
+
+    public void setWord(String word)
+    {
+        this.word = word;
+    }
+
+    public long getCorrectFrequency()
+    {
+        return correctFrequency;
+    }
+
+    public void setCorrectFrequency(long correctFrequency)
+    {
+        this.correctFrequency = correctFrequency;
+    }
+
+    public long getErrorFrequency()
+    {
+        return errorFrequency;
+    }
+
+    public void setErrorFrequency(long errorFrequency)
+    {
+        this.errorFrequency = errorFrequency;
+    }
+
+    public double getErrorProbability()
+    {
+        return errorProbability;
+    }
+
+    public void setErrorProbability(double errorProbability)
+    {
+        this.errorProbability = errorProbability;
+    }
+
+    @Override
+    public String toString()
+    {
+        return (this.word + "\t" + this.errorFrequency + "\t" + this.correctFrequency + "\t"
+                + this.errorProbability + "\n");
+    }
+}
