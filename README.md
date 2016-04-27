@@ -4,7 +4,7 @@ This project contains experiments for spelling error prediction. The pre-process
 The experiments are described in detail in the paper "Predicting the Spelling Difficulty of Words for Language Learners". Please use the following citation:
 
 ```
-@inproceedings{	TUD-CS-2016-0077,
+@inproceedings{Beinborn2016,
 	author = {Lisa Beinborn and Torsten Zesch and Iryna Gurevych},
 	title = {Predicting the Spelling Difficulty of Words for Language Learners},
 	year = {2016},
@@ -31,21 +31,21 @@ Don't hesitate to send us an e-mail or report an issue, if something is broken (
 > This repository contains experimental software and is published for the sole purpose of giving additional background details on the respective publication. 
 
 ## Project structure
-* `src/main/java` contains the code
-* `src/main/java/features` -- feature extractors for the spelling difficulty features
-* `src/main/java/io` -- readers for the learner corpora
-* `src/main/java/prediction` -- the experimental setup for the experiments described in the paper
-* `src/main/java/preprocessing` -- pre-processing for the corpora
-* `src/main/java/types` -- annotation types
-* `src/main/java/util` -- phonetisaurus pronunciation handling
+* `de.tudarmstadt.ukp.spellingDifficulty` contains the code
+* `/features` -- feature extractors for the spelling difficulty features
+* `/io` -- readers for the learner corpora
+* `/prediction` -- the experimental setup for the experiments described in the paper
+* `/preprocessing` -- pre-processing for the corpora
+* `/types` -- annotation types
+* `/util` -- phonetisaurus pronunciation handling
 
 * `src/main/resources` contains the data and the results
-* `src/main/resources/CrossCorpusComparison` -- the results for cross-corpus comparison, table 5 in the data
-* `src/main/resources/EFC` -- training data, test data and results for the EFC corpus
-* `src/main/resources/FCE` -- training data, test data and results for the FCE corpus
-* `src/main/resources/MerlinDe` -- training data, test data and results for the German part of the Merlin corpus
-* `src/main/resources/MerlinIt` -- training data, test data and results for the Italian part of the Merlin corpus
-* `src/main/resources/wordLists` -- additional resources, see Readme.txt in this folder for details
+* `/CrossCorpusComparison` -- the results for cross-corpus comparison, table 5 in the data
+* `/EFC` -- training data, test data and results for the EFC corpus
+* `/FCE` -- training data, test data and results for the FCE corpus
+* `/MerlinDe` -- training data, test data and results for the German part of the Merlin corpus
+* `/MerlinIt` -- training data, test data and results for the Italian part of the Merlin corpus
+* `/wordLists` -- additional resources, see Readme.txt in this folder for details
 
 * DATA: The data is available at https://www.ukp.tu-darmstadt.de/data/spelling-correction/spelling-difficulty-prediction/. Please also cite thereferences to the original learner corpora listed there.  
 ## Requirements
@@ -56,7 +56,7 @@ Don't hesitate to send us an e-mail or report an issue, if something is broken (
 * For new experiments, you would need to install Phonetisaurus (https://github.com/AdolfVonKleist/Phonetisaurus) and MaryTTS (http://mary.dfki.de/) to extract pronunciations. To simply re-run the experiments in the paper, the offline pronunciations avalaible in /src/main/resources/wordList should be sufficient. 
 
 ## Running the experiments
-* To re-run the experiments, check the file src/main/java/prediction/RunEverything.java
+* To re-run the experiments, check the file RunEverything.java
 * We recommend to skip the pre-processing part and directly use the extracted errors available at:  https://www.ukp.tu-darmstadt.de/data/spelling-correction/spelling-difficulty prediction
 
 

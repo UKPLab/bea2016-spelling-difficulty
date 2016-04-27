@@ -1,7 +1,6 @@
 package preprocessing;
 
 import static org.apache.uima.fit.factory.CollectionReaderFactory.createReaderDescription;
-import io.EfcDataReader;
 
 import java.io.BufferedWriter;
 import java.util.ArrayList;
@@ -18,8 +17,9 @@ import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.junit.Test;
 
-import types.ErrorCorrection;
 import de.tudarmstadt.ukp.dkpro.core.api.frequency.util.FrequencyDistribution;
+import de.tudarmstadt.ukp.spellingDifficulty.io.EfcDataReader;
+import de.tudarmstadt.ukp.spellingDifficulty.types.ErrorCorrection;
 
 public class EFCDataReaderTest
 {

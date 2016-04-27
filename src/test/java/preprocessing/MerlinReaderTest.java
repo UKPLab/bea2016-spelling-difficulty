@@ -1,12 +1,13 @@
 package preprocessing;
 
 import static org.apache.uima.fit.factory.CollectionReaderFactory.createReaderDescription;
-import io.MerlinReader;
 
 import org.apache.uima.collection.CollectionReaderDescription;
 import org.apache.uima.fit.pipeline.JCasIterable;
 import org.apache.uima.jcas.JCas;
 import org.junit.Test;
+
+import de.tudarmstadt.ukp.spellingDifficulty.io.MerlinReader;
 
 public class MerlinReaderTest
 {

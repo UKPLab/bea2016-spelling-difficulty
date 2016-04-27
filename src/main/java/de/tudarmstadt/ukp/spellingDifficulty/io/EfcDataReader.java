@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package io;
+package de.tudarmstadt.ukp.spellingDifficulty.io;
 
 import static org.apache.commons.io.IOUtils.closeQuietly;
 
@@ -57,8 +57,6 @@ import org.apache.xerces.dom.ElementNSImpl;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import types.ErrorCorrection;
-
 import com.ctc.wstx.exc.WstxParsingException;
 
 import de.tudarmstadt.ukp.dkpro.core.api.io.JCasResourceCollectionReader_ImplBase;
@@ -67,6 +65,7 @@ import de.tudarmstadt.ukp.dkpro.core.api.parameter.ComponentParameters;
 import de.tudarmstadt.ukp.dkpro.core.api.resources.CompressionUtils;
 import de.tudarmstadt.ukp.dkpro.core.api.resources.MappingProvider;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
+import de.tudarmstadt.ukp.spellingDifficulty.types.ErrorCorrection;
 
 public class EfcDataReader
     extends JCasResourceCollectionReader_ImplBase
@@ -217,7 +216,7 @@ public class EfcDataReader
     // extract information from the essay
     protected void readEssay(JCasBuilder aBuilder, EfcEssay essay)
     {
-        types.LearnerEssay essayAnnotation = new types.LearnerEssay(aBuilder.getJCas());
+        de.tudarmstadt.ukp.spellingDifficulty.types.LearnerEssay essayAnnotation = new de.tudarmstadt.ukp.spellingDifficulty.types.LearnerEssay(aBuilder.getJCas());
         try {
             // create annotation for essay info
             essayAnnotation.setNationality(essay.learner.nationality);

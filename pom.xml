@@ -5,8 +5,8 @@
     <artifactId>dkpro-parent-pom</artifactId>
     <version>11</version>
   </parent>
-  <groupId>de.tudarmstadt.ukp.experiments.lisa</groupId>
-  <artifactId>de.tudarmstadt.ukp.experiments.lisa.spelling</artifactId>
+  <groupId>de.tudarmstadt.ukp.spellingDifficulty</groupId>
+  <artifactId>bea2016-spelling</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <properties>
   	<dkpro.tc.version>0.7.0</dkpro.tc.version>

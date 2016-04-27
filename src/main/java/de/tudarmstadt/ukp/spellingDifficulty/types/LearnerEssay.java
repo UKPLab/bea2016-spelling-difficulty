@@ -16,7 +16,7 @@
  * limitations under the License.
  ******************************************************************************/
 /* First created by JCasGen Wed Apr 23 10:58:24 CEST 2014 */
-package types;
+package de.tudarmstadt.ukp.spellingDifficulty.types;
 
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.JCasRegistry;

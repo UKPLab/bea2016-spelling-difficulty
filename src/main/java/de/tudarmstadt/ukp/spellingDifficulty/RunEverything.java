@@ -15,12 +15,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package prediction;
+package de.tudarmstadt.ukp.spellingDifficulty;
 
 import static org.apache.uima.fit.factory.CollectionReaderFactory.createReaderDescription;
-import io.EfcDataReader;
-import io.FCEReader;
-import io.MerlinReader;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -37,7 +34,12 @@ import org.apache.commons.io.FilenameUtils;
 import org.apache.uima.collection.CollectionReaderDescription;
 import org.apache.uima.resource.ResourceInitializationException;
 
-import preprocessing.ErrorExtractor;
+import de.tudarmstadt.ukp.spellingDifficulty.io.EfcDataReader;
+import de.tudarmstadt.ukp.spellingDifficulty.io.FCEReader;
+import de.tudarmstadt.ukp.spellingDifficulty.io.MerlinReader;
+import de.tudarmstadt.ukp.spellingDifficulty.prediction.SpellingFeatureExtractionPipeline;
+import de.tudarmstadt.ukp.spellingDifficulty.prediction.WekaUtils;
+import de.tudarmstadt.ukp.spellingDifficulty.preprocessing.ErrorExtractor;
 import weka.classifiers.Classifier;
 import weka.classifiers.functions.SMO;
 import weka.classifiers.meta.FilteredClassifier;

@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package preprocessing;
+package de.tudarmstadt.ukp.spellingDifficulty.preprocessing;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -45,10 +45,10 @@ import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
 
-import types.ErrorCorrection;
-import types.LearnerEssay;
 import de.tudarmstadt.ukp.dkpro.core.api.frequency.util.FrequencyDistribution;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
+import de.tudarmstadt.ukp.spellingDifficulty.types.ErrorCorrection;
+import de.tudarmstadt.ukp.spellingDifficulty.types.LearnerEssay;
 
 public class ErrorExtractor
 {

@@ -1,7 +1,6 @@
 package preprocessing;
 
 import static org.apache.uima.fit.factory.CollectionReaderFactory.createReaderDescription;
-import io.FCEReader;
 
 import java.util.Collection;
 
@@ -11,7 +10,8 @@ import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.junit.Test;
 
-import types.ErrorCorrection;
+import de.tudarmstadt.ukp.spellingDifficulty.io.FCEReader;
+import de.tudarmstadt.ukp.spellingDifficulty.types.ErrorCorrection;
 
 public class FCEReaderTest
 {

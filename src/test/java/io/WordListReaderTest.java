@@ -1,6 +1,4 @@
 package io;
-import io.WordListReader;
-
 import org.apache.uima.collection.CollectionReaderDescription;
 import org.apache.uima.fit.factory.CollectionReaderFactory;
 import org.apache.uima.fit.pipeline.JCasIterable;
@@ -10,6 +8,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import de.tudarmstadt.ukp.dkpro.tc.api.type.TextClassificationOutcome;
+import de.tudarmstadt.ukp.spellingDifficulty.io.WordListReader;
 
 public class WordListReaderTest
 {

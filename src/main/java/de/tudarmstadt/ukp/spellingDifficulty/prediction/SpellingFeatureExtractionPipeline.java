@@ -15,12 +15,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package prediction;
+package de.tudarmstadt.ukp.spellingDifficulty.prediction;
 
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
 import static org.apache.uima.fit.factory.CollectionReaderFactory.createReaderDescription;
 import static org.apache.uima.fit.factory.ExternalResourceFactory.createExternalResourceDescription;
-import io.WordListReader;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -36,10 +35,11 @@ import de.tudarmstadt.ukp.dkpro.core.api.resources.DkproContext;
 import de.tudarmstadt.ukp.dkpro.tc.core.Constants;
 import de.tudarmstadt.ukp.dkpro.tc.core.task.uima.ExtractFeaturesConnector;
 import de.tudarmstadt.ukp.dkpro.tc.weka.writer.WekaDataWriter;
-import features.FrequencyExtractor;
-import features.LanguageModelProbExtractor;
-import features.LengthExtractor;
-import features.PhoneticDifficultyExtractor;
+import de.tudarmstadt.ukp.spellingDifficulty.features.FrequencyExtractor;
+import de.tudarmstadt.ukp.spellingDifficulty.features.LanguageModelProbExtractor;
+import de.tudarmstadt.ukp.spellingDifficulty.features.LengthExtractor;
+import de.tudarmstadt.ukp.spellingDifficulty.features.PhoneticDifficultyExtractor;
+import de.tudarmstadt.ukp.spellingDifficulty.io.WordListReader;
 
 public class SpellingFeatureExtractionPipeline
 {

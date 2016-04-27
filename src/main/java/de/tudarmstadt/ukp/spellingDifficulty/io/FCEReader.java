@@ -15,12 +15,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package io;
+package de.tudarmstadt.ukp.spellingDifficulty.io;
 
 import static org.apache.commons.io.IOUtils.closeQuietly;
-import io.EfcDataReader.LearnerCorrection;
-import io.FCEReader.FCEEssay.FCEAnswer;
-import io.FCEReader.FCEEssay.FCEParagraph;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -51,13 +48,15 @@ import org.apache.uima.util.Level;
 import org.apache.uima.util.Logger;
 import org.apache.xerces.dom.ElementNSImpl;
 
-import types.ErrorCorrection;
-
 import com.ctc.wstx.exc.WstxParsingException;
 
 import de.tudarmstadt.ukp.dkpro.core.api.io.JCasResourceCollectionReader_ImplBase;
 import de.tudarmstadt.ukp.dkpro.core.api.resources.CompressionUtils;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
+import de.tudarmstadt.ukp.spellingDifficulty.io.EfcDataReader.LearnerCorrection;
+import de.tudarmstadt.ukp.spellingDifficulty.io.FCEReader.FCEEssay.FCEAnswer;
+import de.tudarmstadt.ukp.spellingDifficulty.io.FCEReader.FCEEssay.FCEParagraph;
+import de.tudarmstadt.ukp.spellingDifficulty.types.ErrorCorrection;
 
 public class FCEReader
     extends JCasResourceCollectionReader_ImplBase
@@ -217,7 +216,7 @@ public class FCEReader
     // extract information from the essay
     protected void readEssay(JCasBuilder aBuilder, FCEEssay essay)
     {
-        types.LearnerEssay essayAnnotation = new types.LearnerEssay(aBuilder.getJCas());
+        de.tudarmstadt.ukp.spellingDifficulty.types.LearnerEssay essayAnnotation = new de.tudarmstadt.ukp.spellingDifficulty.types.LearnerEssay(aBuilder.getJCas());
         try {
             // create annotation for essay info
             essayAnnotation.setNationality(essay.head.candidate.personnel.language);

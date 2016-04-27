@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package features;
+package de.tudarmstadt.ukp.spellingDifficulty.features;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -35,7 +35,6 @@ import org.apache.uima.resource.ResourceSpecifier;
 import org.apache.uima.util.Level;
 import org.apache.uima.util.Logger;
 
-import util.PhonetisaurusPronunciation;
 import de.tudarmstadt.ukp.dkpro.core.api.resources.DkproContext;
 import de.tudarmstadt.ukp.dkpro.tc.api.exception.TextClassificationException;
 import de.tudarmstadt.ukp.dkpro.tc.api.features.DocumentFeatureExtractor;
@@ -43,6 +42,7 @@ import de.tudarmstadt.ukp.dkpro.tc.api.features.Feature;
 import de.tudarmstadt.ukp.dkpro.tc.api.features.FeatureExtractorResource_ImplBase;
 import de.tudarmstadt.ukp.dkpro.tc.api.features.MissingValue;
 import de.tudarmstadt.ukp.dkpro.tc.api.features.MissingValue.MissingValueNonNominalType;
+import de.tudarmstadt.ukp.spellingDifficulty.util.PhonetisaurusPronunciation;
 import dkpro.similarity.algorithms.api.TermSimilarityMeasureBase;
 import dkpro.similarity.algorithms.lexical.string.LevenshteinSecondStringComparator;
 
