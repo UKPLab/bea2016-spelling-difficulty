@@ -34,12 +34,11 @@ public class LengthExtractor
 {
     public static final String LENGTH = "Length";
 
-    @Override
     public List<Feature> extract(JCas jcas)
         throws TextClassificationException
     {
         List<Feature> featList = new ArrayList<Feature>();
-	//length in characters, document text contains only a single word in this setup
+        // length in characters, document text contains only a single word in this setup
         featList.addAll(Arrays.asList(new Feature(LENGTH, jcas.getDocumentText().length())));
 
         return featList;

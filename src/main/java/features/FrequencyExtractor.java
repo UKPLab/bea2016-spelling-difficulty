@@ -52,13 +52,12 @@ public class FrequencyExtractor
     public static final String FREQUENCY = "UnigramLogProbability";
     FrequencyCountProvider frequencyProvider;
 
-    @Override
     public List<Feature> extract(JCas jcas)
         throws TextClassificationException
     {
 
         List<Feature> featList = new ArrayList<Feature>();
-	//document text contains only a single word in this setup
+        // document text contains only a single word in this setup
         try {
             featList.addAll(Arrays.asList(new Feature(FREQUENCY, frequencyProvider
                     .getLogProbability(jcas.getDocumentText()))));
@@ -78,7 +77,7 @@ public class FrequencyExtractor
 
         super.initialize(aSpecifier, aAdditionalParams);
         try {
-	//make sure the web1t data is available
+            // make sure the web1t data is available
             frequencyProvider = new Web1TFileAccessProvider(language, new File(web1tDir), 1, 2);
 
         }

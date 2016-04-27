@@ -120,7 +120,6 @@ public class SoundStructureExtractor
         return true;
     }
 
-    @Override
     public List<Feature> extract(JCas jcas)
         throws TextClassificationException
     {

@@ -52,7 +52,7 @@ Don't hesitate to send us an e-mail or report an issue, if something is broken (
 * Java 7 and higher
 * Maven
 * The web1t-files with jweb1t indexes should be in your DKPRO_HOME directory 
-* the wordlists wamerican, ngerman and italian should be in "/usr/share/dict/" (get them at http://packages.ubuntu.com/de/precise/text/)
+* the wordlists american-english, ngerman and italian should be in "/usr/share/dict/" (get them at http://packages.ubuntu.com/de/precise/text/)
 * For new experiments, you would need to install Phonetisaurus (https://github.com/AdolfVonKleist/Phonetisaurus) and MaryTTS (http://mary.dfki.de/) to extract pronunciations. To simply re-run the experiments in the paper, the offline pronunciations avalaible in /src/main/resources/wordList should be sufficient. 
 
 ## Running the experiments

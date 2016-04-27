@@ -36,6 +36,7 @@ import org.apache.uima.util.Level;
 import org.apache.uima.util.Logger;
 
 import util.PhonetisaurusPronunciation;
+import de.tudarmstadt.ukp.dkpro.core.api.resources.DkproContext;
 import de.tudarmstadt.ukp.dkpro.tc.api.exception.TextClassificationException;
 import de.tudarmstadt.ukp.dkpro.tc.api.features.DocumentFeatureExtractor;
 import de.tudarmstadt.ukp.dkpro.tc.api.features.Feature;
@@ -128,7 +129,15 @@ public class PhoneticDifficultyExtractor
 
     {
         // this is executed as external script, there should be a better solution
-        String path = new DkproContext().getWorkspace("ctestResources/phonetisaurus/");
+        String path = "";
+        try {
+            path = new DkproContext().getWorkspace("ctestResources/phonetisaurus/")
+                    .getAbsolutePath();
+        }
+        catch (IOException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
         try {
             String lib = path + "/lib";
             // the learner vocabulary is modeled using basic vocabulary for training
@@ -155,7 +164,6 @@ public class PhoneticDifficultyExtractor
         }
     }
 
-    @Override
     public List<Feature> extract(JCas jcas)
         throws TextClassificationException
     {

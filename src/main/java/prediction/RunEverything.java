@@ -56,13 +56,13 @@ public class RunEverything
     public static void main(String[] args)
         throws Exception
     {
-	// pre-processing takes long, we recommend to skip this step: 
+        // pre-processing takes long, we recommend to skip this step:
         // runPreprocessing();
 
-	//extract features: 
+        // extract features:
         // runFeatureExtraction();
 
-	//calculate results: 
+        // calculate results:
         for (String corpus : new String[] { "EFC", "FCE", "MerlinDe", "MerlinIt" }) {
             analyzeFeaturesOnTrain(corpus);
             runTrainTest(corpus);
@@ -70,25 +70,21 @@ public class RunEverything
 
         }
         runCrossCorpusExperiments(new String[] { "EFC", "FCE", "MerlinDe", "MerlinIt" });
-	// this requires the original EFC essays
-       // extractDifferentL1s();
+        // this requires the original EFC essays
+        // extractDifferentL1s();
     }
 
     private static void extractDifferentL1s()
         throws ResourceInitializationException, ClassNotFoundException, IOException
     {
         String errorDir = "src/main/resources/EFC/";
-	//THIS DATA IS NOT DISTRIBUTED WITH THE CODE
-	String efcDir = "/src/main/resources/data/EFCamDatEssays/EfcEssays"
+        // THIS DATA IS NOT DISTRIBUTED WITH THE CODE
+        String efcDir = "/src/main/resources/data/EFCamDatEssays/EfcEssays";
         for (String language : new String[] { "ru", "br", "cn", "de", "mx" }) {
             System.out.println(language);
-            CollectionReaderDescription reader = createReaderDescription(
-                    EfcDataReader.class,
-                    EfcDataReader.PARAM_LANGUAGE,
-                    "en",
-                    EfcDataReader.PARAM_SOURCE_LOCATION,
-                    efcDir,
-                    EfcDataReader.PARAM_PATTERNS,
+            CollectionReaderDescription reader = createReaderDescription(EfcDataReader.class,
+                    EfcDataReader.PARAM_LANGUAGE, "en", EfcDataReader.PARAM_SOURCE_LOCATION,
+                    efcDir, EfcDataReader.PARAM_PATTERNS,
                     new String[] { EfcDataReader.INCLUDE_PREFIX + "*" });
             String outDir = errorDir + "byL1/" + language + "/";
             String allErrorsFile = errorDir + "spellingErrors.csv";
@@ -383,15 +379,16 @@ public class RunEverything
     public static void runPreprocessing()
         throws ResourceInitializationException, IOException, ClassNotFoundException
     {
-        // THE CORPORA ARE NOT DISTRIBUTED WITH THE CODE. YOU NEED TO GET THEM FROM THE ORIGINAL REFERENCES CITED IN THE PAPER
-	String merlinDePath ="src/main/resources/data/merlin-exmaralda/german";
-	String merlinItPath = "src/main/resources/data/merlin-exmaralda/italian";
-	String fcePath = "src/main/resources/data/FCE/data/fce-released-dataset/dataset/";
-	String efcPath = "src/main/resources/data/EFCEssays";
+        // THE CORPORA ARE NOT DISTRIBUTED WITH THE CODE. YOU NEED TO GET THEM FROM THE ORIGINAL
+        // REFERENCES CITED IN THE PAPER
+        String merlinDePath = "src/main/resources/data/merlin-exmaralda/german";
+        String merlinItPath = "src/main/resources/data/merlin-exmaralda/italian";
+        String fcePath = "src/main/resources/data/FCE/data/fce-released-dataset/dataset/";
+        String efcPath = "src/main/resources/data/EFCEssays";
         CollectionReaderDescription readerMerlinDe = createReaderDescription(MerlinReader.class,
                 MerlinReader.PARAM_LANGUAGE, "de", MerlinReader.PARAM_SOURCE_LOCATION,
-                merlinDePath,
-                MerlinReader.PARAM_PATTERNS, new String[] { MerlinReader.INCLUDE_PREFIX + "*.exb" });
+                merlinDePath, MerlinReader.PARAM_PATTERNS,
+                new String[] { MerlinReader.INCLUDE_PREFIX + "*.exb" });
         String outDir = "src/main/resources/MerlinDe/";
 
         prepareData(outDir, readerMerlinDe, "O_Graph");
@@ -399,19 +396,15 @@ public class RunEverything
 
         CollectionReaderDescription readerMerlinIt = createReaderDescription(MerlinReader.class,
                 MerlinReader.PARAM_LANGUAGE, "it", MerlinReader.PARAM_SOURCE_LOCATION,
-                merlinItPath,
-                MerlinReader.PARAM_PATTERNS, new String[] { MerlinReader.INCLUDE_PREFIX + "*.exb" });
+                merlinItPath, MerlinReader.PARAM_PATTERNS,
+                new String[] { MerlinReader.INCLUDE_PREFIX + "*.exb" });
         outDir = "src/main/resources/MerlinIt/";
 
         prepareData(outDir, readerMerlinIt, "O_Graph");
         extractExperimentData(outDir, wordListLocationIt, 2, 100, 70);
 
-        CollectionReaderDescription readerFCE = createReaderDescription(
-                FCEReader.class,
-                FCEReader.PARAM_LANGUAGE,
-                "en",
-                FCEReader.PARAM_SOURCE_LOCATION,
-                fcePath,
+        CollectionReaderDescription readerFCE = createReaderDescription(FCEReader.class,
+                FCEReader.PARAM_LANGUAGE, "en", FCEReader.PARAM_SOURCE_LOCATION, fcePath,
                 FCEReader.PARAM_PATTERNS, new String[] { FCEReader.INCLUDE_PREFIX + "*/*.xml" });
         outDir = "src/main/resources/FCE/";
         prepareData(outDir, readerFCE, "S");
