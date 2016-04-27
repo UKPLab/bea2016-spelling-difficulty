@@ -85,7 +85,6 @@ public class MerlinReader
     private void initializeXmlReader()
         throws IOException, XMLStreamException, JAXBException
     {
-        // this is just for intermediate output, can be deleted if not necessary
 
         // // close existing stream
         if (is != null) {
@@ -263,14 +262,7 @@ public class MerlinReader
                         error.setCorrection(correction);
                         error.addToIndexes();
                     }
-                    // This was used for intermediate output
-                    // logger.log(Level.INFO, "Writing");
-                    // System.out.print(res.getPath() + "\t" + tokenId + "\t"
-                    // + learnerToken + "\t" + correction + "\t"
-                    // + Arrays.toString(errorTypes.toArray()) + "\n");
-                    // bw.write(res.getPath() + "\t" + tokenId + "\t" + learnerToken
-                    // + "\t" + correction + "\t"
-                    // + Arrays.toString(errorTypes.toArray()) + "\n");
+
                 }
 
                 jb.add(" ");
