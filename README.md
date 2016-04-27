@@ -31,7 +31,7 @@ Don't hesitate to send us an e-mail or report an issue, if something is broken (
 > This repository contains experimental software and is published for the sole purpose of giving additional background details on the respective publication. 
 
 ## Project structure
-* `de.tudarmstadt.ukp.spellingDifficulty` contains the code
+`de.tudarmstadt.ukp.spellingDifficulty` contains the code
 * `/features` -- feature extractors for the spelling difficulty features
 * `/io` -- readers for the learner corpora
 * `/prediction` -- the experimental setup for the experiments described in the paper
@@ -39,8 +39,8 @@ Don't hesitate to send us an e-mail or report an issue, if something is broken (
 * `/types` -- annotation types
 * `/util` -- phonetisaurus pronunciation handling
 
-* `src/main/resources` contains the data and the results
-* `/CrossCorpusComparison` -- the results for cross-corpus comparison, table 5 in the data
+`src/main/resources` contains the data and the results
+* `/CrossCorpusComparison` -- the results for cross-corpus comparison, table 5 in the paper
 * `/EFC` -- training data, test data and results for the EFC corpus
 * `/FCE` -- training data, test data and results for the FCE corpus
 * `/MerlinDe` -- training data, test data and results for the German part of the Merlin corpus
