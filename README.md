@@ -47,13 +47,13 @@ Don't hesitate to send us an e-mail or report an issue, if something is broken (
 * `/MerlinIt` -- training data, test data and results for the Italian part of the Merlin corpus
 * `/wordLists` -- additional resources, see Readme.txt in this folder for details
 
-* DATA: The data is available at https://www.ukp.tu-darmstadt.de/data/spelling-correction/spelling-difficulty-prediction/. Please also cite thereferences to the original learner corpora listed there.  
+DATA: The data is available at https://www.ukp.tu-darmstadt.de/data/spelling-correction/spelling-difficulty-prediction/. Please also cite thereferences to the original learner corpora listed there.  
 ## Requirements
 * Java 7 and higher
 * Maven
 * The web1t-files with jweb1t indexes should be in your DKPRO_HOME directory 
-* the wordlists american-english, ngerman and italian should be in "/usr/share/dict/" (get them at http://packages.ubuntu.com/de/precise/text/)
-* For new experiments, you would need to install Phonetisaurus (https://github.com/AdolfVonKleist/Phonetisaurus) and MaryTTS (http://mary.dfki.de/) to extract pronunciations. To simply re-run the experiments in the paper, the offline pronunciations avalaible in /src/main/resources/wordList should be sufficient. 
+* For new experiments, you would need to install Phonetisaurus (https://github.com/AdolfVonKleist/Phonetisaurus) and MaryTTS (http://mary.dfki.de/) to extract pronunciations. To simply re-run the experiments in the paper, the offline pronunciations avalaible in /src/main/resources/wordLists should be sufficient. 
+* If you want to re-run the extraction of experimental data, the wordlists american-english, ngerman and italian should be in "/usr/share/dict/" (get the packages wamerican, wngerman and wfrench at http://packages.ubuntu.com/de/precise/text/). Alternatively, you can specify another word list in RunEverything.java, but it will probably lead to slightly different results. 
 
 ## Running the experiments
 * To re-run the experiments, check the file RunEverything.java
